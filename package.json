@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Elijah Simpson",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
