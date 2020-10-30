@@ -19,7 +19,12 @@ body {
 
 input {
     background-color: #DFF8EB;
-    color: #364156
+    color: #364156;
+}
+
+textarea {
+    background-color: #DFF8EB;
+    color: #364156;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -47,6 +52,14 @@ input {
     border-radius: 0.4em;
     padding: 0px 20px;
     background-color: #DFF8EB;
+}
+
+@media all and (min-width: 600px) {
+    body {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .top-buttons {
@@ -135,17 +148,6 @@ h5 {
     border-color: #DFF8EB;
 }
 
-@media all and (max-width:30em) {
-    .new-button{
-        display: block;
-        margin: 0.2em auto;
-    }
-}
-
-
-/* ----- STAR RADIO BUTTONS ----- */
-
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ----- SELECT STYLES ----- */
@@ -186,5 +188,7 @@ h5 {
 .select option {
 	font-weight:normal;
 }
+
+
 
 

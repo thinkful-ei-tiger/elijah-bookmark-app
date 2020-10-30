@@ -98,7 +98,7 @@ const filterBookmarkEvent = function () {
     $('main').on('change', '#filter', event => {
         event.preventDefault();
         let filteredRating = $('#filter').val();
-        templates.renderStartTemplate();
+        templates.renderStartTemplate(); 
         store.bookmarks.forEach(bookmark => {
          if (bookmark.rating >= filteredRating) {
           templates.renderViewTemplate(bookmark);

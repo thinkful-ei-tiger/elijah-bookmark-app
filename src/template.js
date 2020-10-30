@@ -2,11 +2,11 @@ import $ from 'jquery'
 
 const startTemplate = function () {
     return `
-        <div class="">
+        <header class="">
             <h1>Bookmarks</h1>
             <h5>ブックマーク</h5>
-        </div>
-        <div class="top-buttons">    
+        </header>
+        <section class="top-buttons">    
             <form>
                 <button id="new" type="submit" class="btn btn-primary new-bookmark">+ New</button>
                 <select id="filter" name="filter" class="select">
@@ -19,7 +19,7 @@ const startTemplate = function () {
                     <option value="unfiltered" id="unfiltered">All</option>
                 </select>
             </form>
-        </div>
+        </section>
     `
 }
 
@@ -31,12 +31,12 @@ const condensedTemplate = function (bookmark) {
         renderRatingTemplate = `<p>Not rated</p>`
     }
     return  `
-        <div class="bookmark-col">
+        <section class="bookmark-col">
             <div class="bookmark-row">
                 <p><a class="bookmark bookmark-link bookmark-condensed" href="" id="bookmark-title">${bookmark.title}</a></p>
                 <p class='rating'>${renderRatingTemplate} &#9733;</p>
             </div>
-        </div>
+        </section>
     `
 }
 
@@ -56,7 +56,7 @@ const expandedTemplate = function(bookmark){
     }
 
     return `
-        <div class="bookmark-expanded" id="${bookmark.id}">
+        <section class="bookmark-expanded" id="${bookmark.id}">
             <div>
                 <p>${bookmark.title}</p>
                 <p>${renderRatingTemplate}</p>
@@ -66,7 +66,7 @@ const expandedTemplate = function(bookmark){
             </div>
                 <a href='${bookmark.url}'><button type="submit" class="btn btn-primary new-bookmark">Visit</button></a>  
                 <button id="delete-bookmark" type="submit" class="btn btn-primary new-bookmark">Delete</button>              
-        </div>    
+        </section>    
     `
 }
 
@@ -81,11 +81,11 @@ const errorTemplate = function(errObj) {
 
 const addBookmarkTemplate = function() {
     return ` 
-        <div class="">
+        <header class="">
             <h1>Bookmarks</h1>
             <h5>ブックマーク</h5>
-        </div>
-        <div class="add-bookmark-page">
+        </header>
+        <section class="add-bookmark-page">
             <form>
             <div class="add-new-bookmark">
                 <label class="url-label" for="siteURL">Add New Bookmark:</label>
@@ -94,21 +94,23 @@ const addBookmarkTemplate = function() {
                 <br>
             </div>
             <div class="input-section">
+                <label for="siteName" class="hidden">Enter Site Name</label>
                 <input type="text" class="site-name" id="siteName"  required minlength="1" placeholder="Enter Site Name..."/>
                 <br>       
                 <div class ="stars">
                     <input type="radio" id="rating-1" name="rating" value="1" />
                     <label for="rating-1">1 &#9733;</label>
-                    <input type="radio" id="rating-2" name="rating" value="2" checked="checked" />
+                    <input type="radio" id="rating-2" name="rating" value="2" />
                     <label for="rating-2">2 &#9733;</label>
-                    <input type="radio" id="rating-3" name="rating" value="3" />
+                    <input type="radio" id="rating-3" name="rating" value="3" checked="checked" />
                     <label for="rating-3">3 &#9733;</label>
                     <input type="radio" id="rating-4" name="rating" value="4" />
                     <label for="rating-4">4 &#9733;</label>
                     <input type="radio" id="rating-5" name="rating" value="5" />
                     <label for="rating-5">5 &#9733;</label>
                 </div>
-                <input type="text" class="site-description" id="description" minlength="1" placeholder="Add a description...">
+                <label for="description" class="hidden">Site Description</label>
+                <textarea class="site-description" id="description" rows="4" cols="50">Enter Text Here...</textarea>
             </div>
             <div class = "top-buttons">
                 <br>
@@ -116,7 +118,7 @@ const addBookmarkTemplate = function() {
                 <button type="submit" class="btn btn-primary new-bookmark" id="cancel">Cancel</button>
             </div>   
             </form>
-        </div>
+        </section>
     `
 }
 
